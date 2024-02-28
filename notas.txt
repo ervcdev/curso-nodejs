@@ -1,0 +1,2 @@
+event loop:
+ejecuta de manera asincrona eventos y demas, todas se estan ejecutando al mismo tiempo, y se van agregando a la cola, apenas termine se muestra en orden de finalizacion

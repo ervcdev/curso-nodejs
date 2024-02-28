@@ -1,0 +1,1 @@
+cmd_Release/obj.target/NodeCur.node := g++ -o Release/obj.target/NodeCur.node -shared -pthread -rdynamic -m64  -Wl,-soname=NodeCur.node -Wl,--start-group Release/obj.target/NodeCur/hola.o -Wl,--end-group 
