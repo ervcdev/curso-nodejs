@@ -51,7 +51,19 @@ ejecutar las varible de entorno.
 Las funciones son elementos de primer nivel se puden utilizar de cualquier manera y una de estas es pasandole un callback.
 Un callback es una función que se pasa como argumento a otra función y que se ejecuta después de que la función principal haya completado su tarea. Los callbacks son una forma común de manejar operaciones asíncronas en JavaScript y en Node.js.
 
-### Callback Hell
+### Callback Hell.
+
+El "callback hell" (infierno de callbacks) es un término que se utiliza para describir una situación en la que el código JavaScript se vuelve difícil de leer y mantener debido a un anidamiento excesivo de funciones de callback. Esto suele ocurrir en entornos donde se realizan múltiples operaciones asíncronas secuenciales, como en aplicaciones Node.js que manejan muchas solicitudes de red o consultas a bases de datos.
+
+Cuando se utilizan múltiples callbacks anidados, el código puede volverse complicado de seguir, especialmente cuando se tienen múltiples niveles de anidamiento. Esto puede hacer que el código sea propenso a errores, difícil de depurar y mantener, y puede resultar en lo que se conoce como una "pirámide de doom" o "triángulo de la muerte".
+
+### Promesas.
+Las promesas vienen de los callbacks, y estas tienen un estado pueden estar resueltas, no resueltas, pendientes o pueden fallar. Proporcionan una forma más limpia y fácil de manejar operaciones asíncronas en comparación con los callbacks, especialmente cuando hay múltiples operaciones asíncronas encadenadas o paralelas.
+
+### Async/await.
+nos permite definir de forma explicita como funcion asincrona y poder esperar a que esa funcion termine, y esta no va a bloquear el hilo principal por que el hilo principal va a seguier escuchando nuevas peticiones es azucar sintatico nos va a facilitar.
+
+
 
 
 ## Modulos del Core.

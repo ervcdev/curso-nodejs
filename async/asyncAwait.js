@@ -1,3 +1,4 @@
+//al colocar async esta se convierte en una funcion asincrona
 async function hola(nombre, miCallback) {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
@@ -45,7 +46,7 @@ async function main(){
    await hablar();
    await hablar();
    await adios(nombre);
+   console.log('terminando');
 }
 console.log("Empezando");
 main();
-console.log('terminando');
