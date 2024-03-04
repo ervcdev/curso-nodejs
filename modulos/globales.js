@@ -10,13 +10,14 @@ let interval = setInterval(function() {
     i++;
 },1000);
 
-
+//ejecuta inmeditamente
 setImmediate(function() {
     console.log('hola1');
 })
 
 console.log(process);
+console.log(__dirname);
 
-//variables globales en caso de requerirlas
+//creacion de varibla global
 global.miVariable = "elValor";
 console.log(miVariable);

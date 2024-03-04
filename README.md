@@ -63,10 +63,16 @@ Las promesas vienen de los callbacks, y estas tienen un estado pueden estar resu
 ### Async/await.
 nos permite definir de forma explicita como funcion asincrona y poder esperar a que esa funcion termine, y esta no va a bloquear el hilo principal por que el hilo principal va a seguier escuchando nuevas peticiones es azucar sintatico nos va a facilitar.
 
-
-
-
 ## Modulos del Core.
+### GLobals.
+son un monton de modulos que vienen en nodejs, contiene todas las propiedades y métodos globales disponibles en un entorno de ejecución Si es posible es mejor no utilizar variables globales.
+
+En un navegador, el objeto global es window, mientras que en Node.js es global.El objeto global proporciona acceso a funciones y variables globales, así como a otros objetos predefinidos en JavaScript, como Math, JSON, Date, entre otros. Esto significa que cualquier variable o función que se declare sin utilizar var, let o const, o que se declare fuera de cualquier función, se añadirá al objeto global.
+
+
+
+
+
 ## Utilizar los módulos y paquetes externos.
 ## Trucos.
 ## Herramientas con Node.
