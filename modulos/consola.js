@@ -13,8 +13,6 @@ var table = [
 console.table(table);
 
 
-
-
 console.group("hola");
 console.log('conversando');
 console.log('el');

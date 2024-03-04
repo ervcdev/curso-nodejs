@@ -1,12 +1,12 @@
 
 //acceder a todo el sistema operativo
 const os = require("os");
-console.log(os.arch());
-console.log(os.platform());
-console.log(os.cpus().length);
+console.log(os.arch()); //ver la arquitectura
+console.log(os.platform()); // ver si estamos en linuz, android, windows, mac, etc
+console.log(os.cpus().length); //informacion de las cpus
 console.log(os.version());
 console.log(os.userInfo());
-console.log(os.constants);
+console.log(os.constants); //errores y señales del sistema
 
 const SIZE = 1024;
 function kb(bytes) {
@@ -19,12 +19,12 @@ function gb(bytes) {
   return mb(bytes) / SIZE;
 }
 
-/* console.log(os.freemem());
-console.log(kb(os.freemem()));
+console.log(os.freemem()); //ver la memoria libre
+console.log(kb(os.freemem())); //ver la memoria libre en kb
 console.log(mb(os.freemem()));
 console.log(gb(os.freemem()));
 
- */
+ 
 console.log(gb(os.totalmem())); //ver el total de memoria displonible
 
 console.log(os.homedir()); //ver el home donde estoy

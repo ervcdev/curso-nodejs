@@ -1,5 +1,6 @@
 const fs = require('fs');
-// leer archivo del sistema
+
+// leer archivo del sistema, se le pasa la ruta del archivo y un callback
 function leer(ruta, cb) {
     fs.readFile(ruta, (err, data) => {
         //leido
@@ -21,13 +22,14 @@ function escribir(ruta, contenido, cb) {
 
 }
 
-escribir(__dirname + '/archivo1.txt', 'SOy un archivo nuevo de prueba', console.log);
+escribir(__dirname + '/archivo1.txt', 'Soy un archivo nuevo de prueba', console.log);
 
 leer(__dirname + '/archivo1.txt', console.log);
 
 
 //borrar un archivo
 function borrar(ruta, cb){
+    //unlink deslinka los nodos que se an creado
     fs.unlink(ruta, cb);
 
 }

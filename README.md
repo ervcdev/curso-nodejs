@@ -15,7 +15,7 @@ Entorno de ejecución de JS creado por google y libre desde 2008, escrito en c++
 ### Módulos
 Todo lo que no sea sintaxis de programación, son módulos son piesas de codigo muy chiquitas que pueden venir por defecto y otras no en el paquete de Node, puedes crear tus propios modulos.
 
-### Orientado a eventos.
+### Orienetado a eventos.
 hay un bucle de eventos que se ejecuta constantemente, permite programar de forma reactiva, cuando suceda una cosa se ejecutara el codigo.
 
 ## Event loop.
@@ -69,10 +69,96 @@ son un monton de modulos que vienen en nodejs, contiene todas las propiedades y 
 
 En un navegador, el objeto global es window, mientras que en Node.js es global.El objeto global proporciona acceso a funciones y variables globales, así como a otros objetos predefinidos en JavaScript, como Math, JSON, Date, entre otros. Esto significa que cualquier variable o función que se declare sin utilizar var, let o const, o que se declare fuera de cualquier función, se añadirá al objeto global.
 
+### FIle system.
+
+El módulo File System (fs) en Node.js proporciona una API para interactuar con el sistema de archivos del sistema operativo en el que se ejecuta Node.js. Permite realizar operaciones como leer y escribir archivos, crear directorios, modificar permisos de archivos, entre otros.
+
+El módulo fs incluye métodos síncronos y asíncronos para realizar estas operaciones. Los métodos síncronos bloquean el hilo de ejecución hasta que se complete la operación, mientras que los métodos asíncronos no bloquean el hilo y utilizan devoluciones de llamada (callbacks) o promesas para manejar el resultado de la operación.
+
+### Consola.
+la consola tiene muchisimas funciones que son utiles, que nos permite hacer todos los archivos de forma eficiente
+
+### Try/Catch.
+Un error en node rompe toda le ejecucion del codigo, cuando sabemos que algo puede romperse lo metemos dentro de un try/catch y con esto podemos ver el error, nosotros tenemso que decidir que pasa con los errores  y estos como se manejarn.
+
+los try/catch se ejecutan siempre en el hilo principal por eso toca tener cuidado con el asincronismo,la solución es meter el try/catch en la funcion asincrona.
+
+### Procesos hijo.
+Nodejs ademas de ejecutar sus propieos procesos en el sistema puede ejecutar otros en el sistema, cuando se ejecuta una cosa crea un hilo lo ejecuta de manera asincrona ademas se puede trabajar con procesos que son el siguiente escalon del sistema, un procesos es algo que se ejecuta y termina. 
+
+Los procesos hijo son una técnica comúnmente utilizada para realizar tareas concurrentes o paralelas, especialmente en entornos de programación asíncrona como Node.js. Al crear procesos hijo, puedes delegar ciertas tareas a esos procesos para que se ejecuten de manera independiente, lo que puede mejorar el rendimiento y la escalabilidad de una aplicación.
+
+* __spawn__: cuando quieras que el proceso hijo devuelva datos binarios enormes a Node.
+* __exec__: cuando quieras que el proceso hijo devuelva mensajes de estado simples.
+* __spawn__: cuando quieras recibir datos desde que el proceso arranca.
+* __exec__: cuando solo quieras recibir datos al final de la ejecución.
+### Módulos nativos de c++.
+para poder utilizar modulos.
+1. Instala `node-gyp`. Hay que hacerlo de forma global. Para eso, ejecuta:
+
+    ```sh npm i -g node-gyp```
+
+    _Dependiendo del sistema de archivos, y los permisos, puede que tengas que usar sudo en linux y mac, o ejecutar como administrador en windows_
+
+2. Crea tu archivo fuente. Un ejemplo lo puedes encontrar en [la documentación de node](https://nodejs.org/api/addons.html#addons_hello_world)
+3. Crea un `binding.gyp` en la raiz del módulo.
+4. En la carpeta raiz del módulo, ejecuta:
+
+    ```sh node-gyp configure```
+
+5. Se habrá generado un directorio build.
+6. En la carpeta raiz del módulo, ejecuta:
+
+    ```node-gyp build```
+
+7. El módulo se compilará. y podrás importarlo en javascript. Puedes revisar que exista el archivo `build/Release/addon.node` _(es un binario, así que no podrás abrirlo)_
+8. Para usarlo, crea un archivo js. Para importarlo:
+
+    ```const addon = require('./build/Release/addon');```
+
+    y para usarlo:
+
+    ```addon.hola()```
+
+    debería imprimir `mundo`
+
+### HTTP.
+Son los que permiten conectarno o crer servidores.
+
+### OS.
+El módulo os en Node.js proporciona una serie de utilidades relacionadas con el sistema operativo subyacente. Permite a los desarrolladores interactuar con información sobre el sistema operativo, como la información de la CPU, la memoria, la red, los usuarios del sistema, y más.
+
+### Process.
+estos vienen dentro de los modulos globales, acceder a todo el proceso y entender como funciona, escuchar señales y todo lo que necesitemos poderlos escucharlos y utilizarlos.
 
 
+* Cuando se usa exit y ase ha desconectado totalmente del eventLoop, termina el proceso, una vez se ejecute todo lo que pase tiene que ser sincrono y se va aejecutar en el hilo principal por que todo se ha desconectado.
+    ```js
+    process.on('exit', () => {
+        console.log('El proeceso acabo');
+        setTimeout(() => {
+            console.log('esto no se va a ver nunca');
+        }, 0);
+    })
 
+    ```
+
+* 
 
 ## Utilizar los módulos y paquetes externos.
+### Gestión de paquetes: NPM Y package.json
+### Construyendo módulos: Require e Import
+### Módulos útiles
+### Datos almacenados vs en memoria.
+### buffer.
+### Strems.
+
 ## Trucos.
+### Benchmarking(conole time y timeEnd ).
+### Debugger.
+### Error First callacks.
+
 ## Herramientas con Node.
+### Scraping.
+### Automatizazion de procesos.
+### Aplicaciones de escritorio
