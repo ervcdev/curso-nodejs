@@ -8,7 +8,7 @@ process.on('beforeExit', () => {
     console.log('El proceso va a terminar');
 })
 
-//detecta justo cuando valla a slir del programa,
+//detecta justo cuando valla a salir del programa,
 process.on('exit', () => {
     console.log('El proeceso acabo');
     setTimeout(() => {

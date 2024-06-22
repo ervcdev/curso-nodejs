@@ -143,16 +143,26 @@ estos vienen dentro de los modulos globales, acceder a todo el proceso y entende
 
     ```
 
-* 
 
 ## Utilizar los módulos y paquetes externos.
-### Gestión de paquetes: NPM Y package.json
-### Construyendo módulos: Require e Import
-### Módulos útiles
-### Datos almacenados vs en memoria.
-### buffer.
-### Strems.
 
+### Gestión de paquetes: NPM Y package.json
+NPM es el gestor de paquetes de node
+### Construyendo módulos: Require e Import
+
+### Módulos útiles
+
+### Datos almacenados vs en memoria.
+cuando se escribe en memoria es ultra rapido por que se guarda en la cpu, cuando se escribe en disco son procesos mas lentos por que esta hecho para almacenar muchos archivos y la ram es mas poquito el almacenamiento,  la ram esta hecha para escribir archivos muy rapido y los disco duro es para almacenar mucha información
+### buffer.
+son datos en binarios en crudos, que se mueven de un lado para otro.
+### Strems.
+son el paso de datos de un punto a otro, se usa para manejar por partes pequeñas la informacion para no tener errores
+* Strem lectura:es donde tengo un origen y este me va lanzando datos de lectura
+* Strem de escritura: es donde tengo un lugar don de le voy metiendo datos y el destino los recoge.
+* Strem de doble origen: donde puedo meter y sacar datos y trabajar con ellos
+* Streams dúplex: Pueden tanto leerse como escribirse (ejemplo: sockets).
+* Streams transform: Son una forma especial de duplex streams donde los datos que se leen pueden ser modificados y luego escritos (ejemplo: compresión, cifrado).
 ## Trucos.
 ### Benchmarking(conole time y timeEnd ).
 ### Debugger.

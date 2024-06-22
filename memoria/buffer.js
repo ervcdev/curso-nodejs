@@ -1,10 +1,10 @@
-//
 //let buffer = Buffer.alloc(4);
 
 //guardar en 
-//let buffer = Buffer.from([1,2,5,]);
+//let buffer = Buffer.from([1555,2,5,]);
+console.log(buffer);
 
-let buffer = Buffer.from('Hola');
+//let buffer = Buffer.from('Hola');
 
 //console.log(buffer.toString());
 
@@ -18,3 +18,9 @@ for(let i=0; i < 26; i++){
 }
 
 console.log(abc.toString());
+
+
+let buffer = Buffer.alloc(1); // Creamos un buffer de 1 byte
+buffer.writeUInt8(500, 0); // Intentamos escribir el valor 500 en el buffer
+console.log(buffer); // Imprimimos el buffer
+
